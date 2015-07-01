@@ -25,6 +25,9 @@ class Board:
             
         return True
     
+    def __hash__(self):
+        return hash(tuple(self.board))
+    
     def get_position_value(self, x, y):
         if x < 0 or y < 0 or x >= self.width or y >= self.height:
             raise Exception("Out of bounds")
