@@ -17,7 +17,8 @@ def main():
     for piece_perm in piece_perms:
         board_list.extend(ChessManager.place_pieces(board, list(piece_perm), 0, 0))
     
-    for elem in board_list:
+    board_set = set(board_list)
+    for elem in board_set:
         print(elem.get_board())
 
 main()
