@@ -1,9 +1,9 @@
-from src.chess.Board import Board
-from src.chess.pieces.king import King
-from src.chess.pieces.queen import Queen
-from src.chess.pieces.rook import Rook
-from src.chess.pieces.bishop import Bishop
-from src.chess.pieces.knight import Knight
+from chess.Board import Board
+from pieces.bishop import Bishop
+from pieces.king import King
+from pieces.knight import Knight
+from pieces.queen import Queen
+from pieces.rook import Rook
 
 
 class ParameterManager:

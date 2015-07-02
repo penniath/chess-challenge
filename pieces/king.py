@@ -1,5 +1,4 @@
-from src.chess.pieces.piece import Piece
-
+from pieces.piece import Piece
 
 class King(Piece):
     

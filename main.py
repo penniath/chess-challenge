@@ -1,8 +1,8 @@
 import itertools
 
-from src.chess.BoardPrinter import BoardPrinter
-from src.chess.ChessManager import ChessManager
-from src.chess.ParameterManager import ParameterManager
+from chess.ParameterManager import ParameterManager
+from chess.ChessManager import ChessManager
+from chess.BoardPrinter import BoardPrinter
 
 
 def main():
