@@ -15,6 +15,9 @@ class ChessManager:
         if board.is_out_of_bounds(x, y):
             return []
         
+        if board.count_empty_positions() < len(piece_list):
+            return []
+        
         board_list = []
         if board_copy.get_position_value(x, y) != '-1':
             piece = piece_list_copy[0]

@@ -56,3 +56,10 @@ class Board:
         
     def get_board(self):
         return self.board
+    
+    def count_empty_positions(self):
+        count = 0
+        for cell in self.board:
+            if cell is None:
+                count+= 1
+        return count
