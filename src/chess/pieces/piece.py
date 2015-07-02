@@ -5,6 +5,12 @@ class Piece:
     
     type = '_'
     
+    def __eq__(self, other):
+        return self.type == other.type
+    
+    def __hash__(self):
+        return hash(self.type)
+    
     def check_positions(self, board, x, y):
         for i, j in self.get_all_positions(board, x, y):
             if not self.check_position(board, i, j):

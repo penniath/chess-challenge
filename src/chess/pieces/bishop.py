@@ -3,7 +3,7 @@ from src.chess.pieces.piece import Piece
 
 class Bishop(Piece):
     
-    type = 'R'
+    type = 'B'
     
     def get_all_positions(self, board, x, y):
         positions = []
