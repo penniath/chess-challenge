@@ -29,7 +29,10 @@ class Piece:
     @abstractmethod
     def mark_positions(self, board, x, y):
         for i, j in self.get_all_positions(board, x, y):
-            board.set_position_value(i, j, '-1')
+            try:
+                board.set_position_value(i, j, '-1')
+            except Exception:
+                pass
             
     @abstractmethod
     def get_type(self):

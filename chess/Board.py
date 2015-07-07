@@ -29,15 +29,16 @@ class Board:
         return hash(tuple(self.board))
     
     def get_position_value(self, x, y):
-        if x < 0 or y < 0 or x >= self.width or y >= self.height:
+        if self.is_out_of_bounds(x, y):
             raise Exception("Out of bounds")
         i = x + y * self.width
         return self.board[i]
         
     def set_position_value(self, x, y, value):
-        if x >= 0 and y >= 0 and x < self.width and y < self.height:
-            i = x + y * self.width
-            self.board[i] = value
+        if self.is_out_of_bounds(x, y):
+            raise Exception("Out of bounds")
+        i = x + y * self.width
+        self.board[i] = value
         
     def get_width(self):
         return self.width
@@ -46,13 +47,16 @@ class Board:
         return self.height
         
     def is_out_of_bounds(self, x, y):
-        i = x + y * self.width
-        last = self.width * self.height
-        return i < 0 or i >= last
+        return (x < 0 or y < 0 or x >= self.width or y >= self.height)
         
     def get_next_position(self, x, y):
+        if self.is_out_of_bounds(x, y):
+            raise Exception("Out of bounds")
         i = x + y * self.width + 1
-        return (i%self.width, i//self.width)
+        
+        new_x = i % self.width
+        new_y = i // self.width
+        return (new_x, new_y)
         
     def get_board(self):
         return self.board

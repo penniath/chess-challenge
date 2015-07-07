@@ -16,7 +16,7 @@ class BoardPrinter:
             print(line)
             cls.print_horizontal_lines(board.get_width())
             
-        print()
+        print('')
 
 
     @classmethod
